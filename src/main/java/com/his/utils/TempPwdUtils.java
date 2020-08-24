@@ -20,9 +20,6 @@ public class TempPwdUtils {
 		return generatedString;
 	}
 
-	public static void main(String[] args) {
-		String generateTempPazzword = generateTempPazzword();
-		System.out.println(generateTempPazzword);
-	}
+
 
 }

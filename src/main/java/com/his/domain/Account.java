@@ -1,5 +1,7 @@
 package com.his.domain;
 
+import javax.persistence.Column;
+
 public class Account {
 
 	private Integer accId;
@@ -83,63 +85,9 @@ public class Account {
 	}
 	@Override
 	public String toString() {
-		return "Employee [accId=" + accId + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", gender="
-				+ gender + ", role=" + role + "]";
+		return "Account [accId=" + accId + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", gender="
+				+ gender + ", role=" + role + ", status=" + status + ", pazzword=" + pazzword + ", isDeleted="
+				+ isDeleted + "]";
 	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((accId == null) ? 0 : accId.hashCode());
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((fname == null) ? 0 : fname.hashCode());
-		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
-		result = prime * result + ((lname == null) ? 0 : lname.hashCode());
-		result = prime * result + ((role == null) ? 0 : role.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Account other = (Account) obj;
-		if (accId == null) {
-			if (other.accId != null)
-				return false;
-		} else if (!accId.equals(other.accId))
-			return false;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
-		if (fname == null) {
-			if (other.fname != null)
-				return false;
-		} else if (!fname.equals(other.fname))
-			return false;
-		if (gender == null) {
-			if (other.gender != null)
-				return false;
-		} else if (!gender.equals(other.gender))
-			return false;
-		if (lname == null) {
-			if (other.lname != null)
-				return false;
-		} else if (!lname.equals(other.lname))
-			return false;
-		if (role == null) {
-			if (other.role != null)
-				return false;
-		} else if (!role.equals(other.role))
-			return false;
-		return true;
-	}
-
+	
 }

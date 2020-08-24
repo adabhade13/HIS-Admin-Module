@@ -37,11 +37,11 @@ public class AccountMgmtServiceImpl implements AccountMgmtService {
 	@Override
 	public boolean saveAccountInfo(Account account){
 	    AccountEntity entity = new AccountEntity();
+	    BeanUtils.copyProperties(account, entity);
 	    entity.setStatus(AppConstants.APP_LOCKED);
 	    entity.setIsDeleted(AppConstants.NO);
 	    String tempPazzword = TempPwdUtils.generateTempPazzword();
 	    entity.setPazzword(tempPazzword);
-	    BeanUtils.copyProperties(account, entity);
 	    AccountEntity saved = accountRepo.save(entity);
 	    if(saved.getAccId() !=null && saved.getEmail() !=null) {
 	    	String subject="Unlock Account";
