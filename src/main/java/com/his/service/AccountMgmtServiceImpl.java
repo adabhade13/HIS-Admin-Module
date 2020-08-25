@@ -39,7 +39,7 @@ public class AccountMgmtServiceImpl implements AccountMgmtService {
 	    AccountEntity entity = new AccountEntity();
 	    BeanUtils.copyProperties(account, entity);
 	    entity.setStatus(AppConstants.APP_LOCKED);
-	    entity.setIsDeleted(AppConstants.NO);
+	    entity.setIsDeleted(AppConstants.YES);
 	    String tempPazzword = TempPwdUtils.generateTempPazzword();
 	    entity.setPazzword(tempPazzword);
 	    AccountEntity saved = accountRepo.save(entity);

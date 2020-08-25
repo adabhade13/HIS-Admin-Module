@@ -13,6 +13,7 @@
 	<form:form action="saveAccount" modelAttribute="account"
 		method="POST">
 		<table border="1">
+		    <form:hidden path="accId"/>
 			<tr>
 				<td>First Name :</td>
 				<td><form:input path="fname" /></td>

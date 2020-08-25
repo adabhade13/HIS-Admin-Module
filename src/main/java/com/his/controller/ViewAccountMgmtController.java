@@ -22,6 +22,10 @@ public class ViewAccountMgmtController {
 	public String loadAccountDetails(Model model) {
 		List<Account> accounts = accountService.getAllAccount();
 		model.addAttribute("accounts", accounts);
+		List<String> roles = accountService.getRoles();
+		if(roles !=null) {
+			model.addAttribute("roles", roles);
+		}
 		return "viewAccount";
 	}
 
@@ -29,15 +33,22 @@ public class ViewAccountMgmtController {
 	public String editAccount(@RequestParam("accId")Integer accId,Model model) {
 		Account account = accountService.getEditAccount(accId);
 		model.addAttribute("account", account);
+		List<String> roles = accountService.getRoles();
+		if(roles !=null) {
+			model.addAttribute("roles", roles);
+		}
 		return "account";
 	}
 	
 	@GetMapping(value = "/deleteAccount")
-	public String deleteAccount(@RequestParam("accId")Integer accId,Model model) {
+	public String deleteAccount(@RequestParam("accId")Integer accId,Model model,String update) {
 		
 		Account account = accountService.findAccountId(accId);
 		if(account.getAccId() != null) {
-			account.setIsDeleted(AppConstants.YES);
+			account.setIsDeleted(AppConstants.NO);
+			if(Boolean.parseBoolean(update)) {
+				account.setIsDeleted(AppConstants.YES);
+			}
 			boolean updateAccountMgmt = accountService.updateAccountMgmt(account);
 			if(updateAccountMgmt) {
 			  return "redirect:/getAllAccount";	

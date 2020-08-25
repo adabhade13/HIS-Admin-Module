@@ -17,7 +17,7 @@ public class EmailTemplate {
 		+ "your temporary password is ::"+entity.getPazzword()+"<br>"
 		+ "</div>"
 		+" Click here to Un-lock Account::"
-		+"<a href=http://localhost:8182/unlockAcc?email="+entity.getEmail()+"> Un-lock Account </a><br><br>"
+		+"<a href=http://localhost:8182/unlockAcc?email="+entity.getEmail()+"> Un-lock Account  </a><br><br>"
 		
 		+"Thanks &  Regards <br>"
 		 +"HIS-Services Pvt ltd, New Jersy USA"
