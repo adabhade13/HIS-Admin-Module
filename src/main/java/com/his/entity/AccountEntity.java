@@ -104,6 +104,7 @@ public class AccountEntity {
 	public void setIsDeleted(String isDeleted) {
 		this.isDeleted = isDeleted;
 	}
+	
 	@CreationTimestamp
 	@Temporal(TemporalType.DATE)
 	@Column(name = "createdDate" , updatable = false)
