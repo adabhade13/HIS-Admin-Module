@@ -18,6 +18,9 @@ public class UnlockAccountController {
 	
 	 @Autowired
 	   private AccountMgmtService accountService;
+	   
+	    @Autowired
+	   private AccountMgmtService accountService;
 	
 	@GetMapping(value = "/unlockAcc")
 	public String loadUnlockAccForm(@RequestParam("email")String email,Model model) {
