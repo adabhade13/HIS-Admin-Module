@@ -18,6 +18,9 @@ public class AccountMgmtController {
    @Autowired
    private AccountMgmtService accountService;
    
+    @Autowired
+   private AccountMgmtService accountService;
+   
    @GetMapping(value = {"/","/addAccount"})
 	public String loadForm(Model model) {
 		Account account = new Account();
