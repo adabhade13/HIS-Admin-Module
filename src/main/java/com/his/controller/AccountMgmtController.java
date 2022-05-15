@@ -36,7 +36,9 @@ public class AccountMgmtController {
    @PostMapping(value = "/saveAccount")
    public String saveEmployee(@ModelAttribute("account") Account account,Model model) {
 	     boolean isSaved = false;
-		 isSaved = accountService.saveAccountInf//o(account);
+		 isSaved = accountService.saveAccountInfo(account);
+		 
+	     
 			/*
 			
 			 * if(isSaved) { model.addAttribute("succMsg", "Role Created SuccessFully..!");
