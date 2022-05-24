@@ -13,6 +13,11 @@ public class Account {
 	private String status;
 	private String pazzword;
 	private String isDeleted;
+	
+	private Integer accId;
+	private String fname;
+	private String lname;
+	private String email;
 
 	public Account() {
 
