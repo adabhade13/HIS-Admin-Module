@@ -14,6 +14,12 @@ public class Account {
 	private String pazzword;
 	private String isDeleted;
 	
+	
+	private String role;
+	private String status;
+	private String pazzword;
+	private String isDeleted;
+	
 	private Integer accId;
 	private String fname;
 	private String lname;
