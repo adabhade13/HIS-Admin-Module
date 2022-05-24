@@ -13,6 +13,12 @@ public class Account {
 	private String status;
 	private String pazzword;
 	private String isDeleted;
+	
+	
+	private String role;
+	private String status;
+	private String pazzword;
+	private String isDeleted;
 
 	public Account() {
 
