@@ -32,6 +32,11 @@ public class AccountEntity {
 	private Date createdDate;
 	private Date updatedDate;
 	
+	private String pazzword1;
+	private String isDeleted1;
+	private Date createdDate1;
+	private Date updatedDate1;
+	
 	
 	@Id
 	@SequenceGenerator(name = "acc_id",
