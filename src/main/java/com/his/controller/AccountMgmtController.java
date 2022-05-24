@@ -18,15 +18,15 @@ public class AccountMgmtController {
    @Autowired
    private AccountMgmtService accountService;
    
-    @Autowired
-   //private AccountMgmtService accountService;
+    //@Autowired
+  // private AccountMgmtService accountService;
    
    @GetMapping(value = {"/","/addAccount"})
 	public String loadForm(Model model) {
 		Account account = new Account();
 		model.addAttribute("account", account);
 		List<String> roles = accountService.getRoles();
-		String sb = null;
+		String str = null;
 		if(roles !=null) {
 			model.addAttribute("roles", roles);
 		}
@@ -38,7 +38,9 @@ public class AccountMgmtController {
 	     boolean isSaved = false;
 		 isSaved = accountService.saveAccountInfo(account);
 		 
+	     
 			/*
+			
 			 * if(isSaved) { model.addAttribute("succMsg", "Role Created SuccessFully..!");
 			 * }else { model.addAttribute("errMsg",
 			 * "Something went wrong.. please try again..!"); }
