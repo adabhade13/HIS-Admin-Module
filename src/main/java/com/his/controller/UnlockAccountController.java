@@ -16,11 +16,16 @@ import com.his.utils.AppConstants;
 @Controller
 public class UnlockAccountController {
 	
-	 @Autowired
+	   @Autowired
 	   private AccountMgmtService accountService;
 	   
-	    @Autowired
-	   private AccountMgmtService accountService;
+	   
+	 @GetMapping(value = "/web")
+	public String loadUnlockAccForm() {	
+		return "Welcome";
+	}
+	
+	   
 	
 	@GetMapping(value = "/unlockAcc")
 	public String loadUnlockAccForm(@RequestParam("email")String email,Model model) {
@@ -38,9 +43,11 @@ public class UnlockAccountController {
 		Account account = accountService.findAccountByTempPwd(unlockAccount.getTempPwd());
 		
 		if(account.getAccId() != null) {
+			
 			account.setStatus(AppConstants.APP_UNLOCKED);
 			account.setPazzword(unlockAccount.getNewPwd());
 			boolean isUpdateAccount = accountService.updateAccountMgmt(account);
+			
 		   if(isUpdateAccount) {
 			return "unlockSucc";
 		   }
